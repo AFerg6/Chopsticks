@@ -1,18 +1,28 @@
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 public class PlayerMovementScript : MonoBehaviour
 {
     public float speed;
     public float mouseSensitivity;
     private CharacterController controller;
+    
+    
+    private float xRotation = 0f; // Tracks vertical rotation (pitch)
 
-    private GameObject playerCam;
+    private Transform playerCam;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
-        playerCam = GameObject.Find("Main Camera");
+        playerCam = Camera.main.transform;
+        
+        // Lock cursor to center
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
 
     // Update is called once per frame
@@ -22,8 +32,21 @@ public class PlayerMovementScript : MonoBehaviour
         moveVector = moveVector.normalized;
         moveVector *= speed * Time.deltaTime;
         controller.Move(moveVector);
+
+        rotatePlayerCam();
+    }
+
+    private void rotatePlayerCam()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         
-        transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime, 0));
-        playerCam.transform.Rotate(new Vector3(Input.GetAxis("Mouse Y") * -mouseSensitivity * Time.deltaTime, 0, 0), Space.Self);
+        transform.Rotate(Vector3.up * mouseX);
+        // Vertical rotation (pitch) - accumulated and clamped
+        xRotation -= mouseY; // Subtract to invert vertical look (optional)
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        // Apply vertical rotation to camera only
+        playerCam.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 }
