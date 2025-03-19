@@ -23,8 +23,7 @@ public class ShopScript : MonoBehaviour
                 playerInfo.spendSocialCredit(price);
                 
             }
-        }
-        // equipItem();
+        } else equipItem(productName);
     }
 
     // Update is called once per frame
@@ -33,8 +32,8 @@ public class ShopScript : MonoBehaviour
         
     }
 
-    void equipItem(){
-        
+    void equipItem(String product){
+        // TODO make all the hats disappear except for the one selected
     }
     
 }
