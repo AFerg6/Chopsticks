@@ -5,9 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerInfo", menuName = "Scriptable Objects/PlayerInfo")]
 public class PlayerInfo : ScriptableObject
 {
+    [NonSerialized]
     private int socialCredit;
 
-    private String[] items = new string[3];
+    [NonSerialized]
+    public String[] itemsPurchased = new string[0];
     
     public void increaseSocialCredit(int amount){
         socialCredit += amount;
@@ -22,15 +24,30 @@ public class PlayerInfo : ScriptableObject
     }
 
     public Boolean checkItemsBought(String purchasedItem){
-        for (int i = 0; i < items.Length; i++){
-            if (items[i].Equals(purchasedItem)) return true;
+        for (int i = 0; i < itemsPurchased.Length; i++){
+            if (itemsPurchased[i].Equals(purchasedItem)) return true;
         }
         return false;
     }
 
-    public void populateArray(String purchase){
-        for (int i = 0; i < items.Length; i++){
-            if (items[i] == null) items[i] = purchase;
+    public void addItem(String purchase){
+        if (!checkItemsBought(purchase))
+        {
+            if (itemsPurchased.Length == 0)
+            {
+                itemsPurchased = new string[1];
+                itemsPurchased[0] = purchase;
+            }
+            else
+            {
+                string[] temp = new string[itemsPurchased.Length];
+                for (int i = 0; i < itemsPurchased.Length; i++)
+                    temp[i] = itemsPurchased[i];
+                itemsPurchased = new string[temp.Length + 1];
+                for (int i = 0; i < temp.Length; i++)
+                    itemsPurchased[i] = temp[i];
+                itemsPurchased[itemsPurchased.Length - 1] = purchase;
+            }
         }
     }
 
