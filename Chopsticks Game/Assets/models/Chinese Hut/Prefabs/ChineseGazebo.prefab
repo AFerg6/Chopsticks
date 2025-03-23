@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4006330060897614}
   - component: {fileID: 33671207818589468}
   - component: {fileID: 23033247479749384}
+  - component: {fileID: 6444133184018283080}
   m_Layer: 0
-  m_Name: ChineseTing
+  m_Name: ChineseGazebo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,6 +87,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6444133184018283080
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703891437781640}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 91113bdb541b9bb4d9c712548f3e1ec8, type: 3}
 --- !u!1 &1840583441413406
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +120,7 @@ GameObject:
   - component: {fileID: 4340286757883090}
   - component: {fileID: 205534499526416952}
   m_Layer: 0
-  m_Name: ChineseTing
+  m_Name: ChineseGazebo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

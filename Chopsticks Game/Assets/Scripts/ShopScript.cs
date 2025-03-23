@@ -21,7 +21,7 @@ public class ShopScript : MonoBehaviour
         
         if (playerInfo.checkItemsBought(productName)) setEquipMode();
         //TEST
-        playerInfo.increaseSocialCredit(100);
+        playerInfo.increaseSocialCredit(50);
     }
 
     void OnTriggerEnter(Collider other)

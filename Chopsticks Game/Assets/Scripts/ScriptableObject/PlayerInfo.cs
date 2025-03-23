@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerInfo", menuName = "Scriptable Objects/PlayerInfo")]
 public class PlayerInfo : ScriptableObject
 {
+    [NonSerialized]
     private int level = 0;
 
     [NonSerialized]
