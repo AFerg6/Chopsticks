@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerInfo", menuName = "Scriptable Objects/PlayerInfo")]
 public class PlayerInfo : ScriptableObject
 {
+    private int level = 0;
+
     [NonSerialized]
     private int socialCredit;
 
@@ -21,6 +23,16 @@ public class PlayerInfo : ScriptableObject
 
     public int getSocialCredit(){
         return socialCredit;
+    }
+
+    public void increaseLevel()
+    {
+        level++;
+    }
+
+    public int getLevel()
+    {
+        return level;
     }
 
     public Boolean checkItemsBought(String purchasedItem){
@@ -50,5 +62,4 @@ public class PlayerInfo : ScriptableObject
             }
         }
     }
-
 }
