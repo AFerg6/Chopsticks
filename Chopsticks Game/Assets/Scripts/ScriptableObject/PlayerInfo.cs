@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerInfo", menuName = "Scriptable Objects/PlayerInfo")]
 public class PlayerInfo : ScriptableObject
 {
-    private int socialCredit;
+    private int socialCredit = 0;
+    private int level = 0;
 
     private String[] items = new string[3];
     
@@ -21,6 +22,16 @@ public class PlayerInfo : ScriptableObject
         return socialCredit;
     }
 
+    public void increaseLevel()
+    {
+        level++;
+    }
+
+    public int getLevel()
+    {
+        return level;
+    }
+
     public Boolean checkItemsBought(String purchasedItem){
         for (int i = 0; i < items.Length; i++){
             if (items[i].Equals(purchasedItem)) return true;
@@ -33,5 +44,4 @@ public class PlayerInfo : ScriptableObject
             if (items[i] == null) items[i] = purchase;
         }
     }
-
 }
