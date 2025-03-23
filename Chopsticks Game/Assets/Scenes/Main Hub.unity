@@ -411,9 +411,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6079973731188497520, guid: 1db48b839e0125b4eb633a3072bb7527, type: 3}
-      propertyPath: mouseSensitivity
-      value: 120
+    - target: {fileID: 6570554969599808707, guid: 1db48b839e0125b4eb633a3072bb7527, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570554969599808707, guid: 1db48b839e0125b4eb633a3072bb7527, type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 6685450682898992187, guid: 1db48b839e0125b4eb633a3072bb7527, type: 3}
       propertyPath: m_LocalPosition.x
@@ -421,7 +425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6685450682898992187, guid: 1db48b839e0125b4eb633a3072bb7527, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.92
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 6685450682898992187, guid: 1db48b839e0125b4eb633a3072bb7527, type: 3}
       propertyPath: m_LocalPosition.z
@@ -458,6 +462,10 @@ PrefabInstance:
     - target: {fileID: 7685980614169568277, guid: 1db48b839e0125b4eb633a3072bb7527, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8143176472291789750, guid: 1db48b839e0125b4eb633a3072bb7527, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1123,7 +1131,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1840583441413406, guid: 80c9bfe7594f36647b8dfc3142bdf50c, type: 3}
       propertyPath: m_Name
-      value: ChineseTing
+      value: ChineseGazebo
       objectReference: {fileID: 0}
     - target: {fileID: 4340286757883090, guid: 80c9bfe7594f36647b8dfc3142bdf50c, type: 3}
       propertyPath: m_LocalScale.x
