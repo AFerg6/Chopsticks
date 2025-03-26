@@ -20,8 +20,6 @@ public class ShopScript : MonoBehaviour
         shopText.text = "Purchase " + productName + "\nfor " + price + " credit";
         
         if (playerInfo.checkItemsBought(productName)) setEquipMode();
-        //TEST
-        playerInfo.increaseSocialCredit(100);
     }
 
     void OnTriggerEnter(Collider other)

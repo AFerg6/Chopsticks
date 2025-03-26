@@ -7,22 +7,22 @@ public class PlayerMovementScript : MonoBehaviour
 {
     public float speed;
     public float mouseSensitivity;
-    private CharacterController controller;
+    public float jumpForce;
     
+    private Rigidbody rb;
     
     private float xRotation = 0f; // Tracks vertical rotation (pitch)
-
     private Transform playerCam;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        controller = gameObject.GetComponent<CharacterController>();
         playerCam = Camera.main.transform;
+        rb = gameObject.GetComponent<Rigidbody>();
         
         // Lock cursor to center
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
     }
 
     // Update is called once per frame
@@ -30,9 +30,12 @@ public class PlayerMovementScript : MonoBehaviour
     {
         Vector3 moveVector = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
         moveVector = moveVector.normalized;
-        moveVector *= speed * Time.deltaTime;
-        controller.Move(moveVector);
-
+        rb.linearVelocity = (moveVector * speed) + (Vector3.up * rb.linearVelocity.y);
+        
+        if(Input.GetButtonDown("Jump"))
+            if(checkGrounded())
+                jump();
+        
         rotatePlayerCam();
     }
 
@@ -48,5 +51,15 @@ public class PlayerMovementScript : MonoBehaviour
 
         // Apply vertical rotation to camera only
         playerCam.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+    }
+
+    private void jump()
+    {
+        rb.AddForce(0, jumpForce, 0, ForceMode.VelocityChange);
+    }
+
+    private bool checkGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, 1.2f);
     }
 }
