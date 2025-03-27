@@ -1447,7 +1447,8 @@ PrefabInstance:
       propertyPath: storyText
       value: There once was a man named Bob, a lowly peasant in a harsh, class-based
         society. Determined to never work for anyone again, Bob begins his quest
-        to ascend the social ladder...
+        to ascend the social ladder... Be wary - those jealous of Bob's tenacity
+        will seek to stand in his way.
       objectReference: {fileID: 0}
     - target: {fileID: 1319019501138540756, guid: 8cf9ffc8e0032c543bb2fefb97a8dc13, type: 3}
       propertyPath: m_Pivot.x

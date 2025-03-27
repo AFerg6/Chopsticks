@@ -28,7 +28,7 @@ public class ShopScript : MonoBehaviour
         if (other.gameObject.tag.Equals("Player"))
         {
             if (!playerInfo.checkItemsBought(productName)){
-                if (playerInfo.getSocialCredit() > price) {
+                if (playerInfo.getSocialCredit() >= price) {
                     playerInfo.spendSocialCredit(price);
                     playerInfo.addItem(productName);
                     equipItem(productName);
