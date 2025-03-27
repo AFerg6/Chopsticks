@@ -15,13 +15,19 @@ public class CooldownIndicatorScript : MonoBehaviour
     {
         transform.parent.gameObject.GetComponent<TMP_Text>().text = text;
         indicator = gameObject.GetComponent<Image>();
-        maxValue = cooldown.GetMaxValue();
-        indicator.fillAmount = 1;
+        if(cooldown)
+            maxValue = cooldown.GetMaxValue();
+        else
+        {
+            maxValue = 1;
+            currentValue = 0;
+        }
     }
 
     void Update()
     {
-        currentValue = cooldown.GetCurrentValue();
+        //Uncomment during phase 2
+        //currentValue = cooldown.GetCurrentValue();
         indicator.fillAmount = (float)(currentValue / maxValue);
     }
 }
