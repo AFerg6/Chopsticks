@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0aef4ae15813c7e43b10aaf41191590b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.33
+      value: -1.18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0aef4ae15813c7e43b10aaf41191590b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d0996aca42f5bac48879082c9e3c4264, type: 2}
     - target: {fileID: 919132149155446097, guid: 0aef4ae15813c7e43b10aaf41191590b, type: 3}
       propertyPath: m_Name
-      value: hat_LP
+      value: Wizzard Hat
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
