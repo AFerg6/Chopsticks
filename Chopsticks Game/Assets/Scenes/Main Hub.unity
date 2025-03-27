@@ -1610,6 +1610,14 @@ PrefabInstance:
       value: There was once a man named Bob. He was very cool. He want to go up in
         the social ladder, something more to the story.
       objectReference: {fileID: 0}
+    - target: {fileID: 1856996330940981746, guid: 8cf9ffc8e0032c543bb2fefb97a8dc13, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 1856996330940981746, guid: 8cf9ffc8e0032c543bb2fefb97a8dc13, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3100719129356212487, guid: 8cf9ffc8e0032c543bb2fefb97a8dc13, type: 3}
       propertyPath: m_Name
       value: IntroBlurb
