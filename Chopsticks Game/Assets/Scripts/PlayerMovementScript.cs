@@ -10,8 +10,10 @@ public class PlayerMovementScript : MonoBehaviour
     public float jumpForce;
     
     private Rigidbody rb;
+    private Animator animator;
     
     private float xRotation = 0f; // Tracks vertical rotation (pitch)
+    private bool grounded = false;
     private Transform playerCam;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,6 +21,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         playerCam = Camera.main.transform;
         rb = gameObject.GetComponent<Rigidbody>();
+        animator = gameObject.GetComponent<Animator>();
         
         // Lock cursor to center
         Cursor.lockState = CursorLockMode.Locked;
@@ -31,9 +34,13 @@ public class PlayerMovementScript : MonoBehaviour
         Vector3 moveVector = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
         moveVector = moveVector.normalized;
         rb.linearVelocity = (moveVector * speed) + (Vector3.up * rb.linearVelocity.y);
+        animator.SetFloat("MoveSpeed", moveVector.magnitude);
+
+        grounded = checkGrounded();
+        animator.SetBool("Grounded", grounded);
         
         if(Input.GetButtonDown("Jump"))
-            if(checkGrounded())
+            if(grounded)
                 jump();
         
         rotatePlayerCam();
