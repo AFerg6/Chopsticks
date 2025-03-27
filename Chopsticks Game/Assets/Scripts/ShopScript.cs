@@ -8,6 +8,7 @@ public class ShopScript : MonoBehaviour
     public PlayerInfo playerInfo;
     public String productName;
     public int price;
+    public GameObject cosmetic;
     private GameObject player;
     private TMP_Text shopText;
 
@@ -24,17 +25,17 @@ public class ShopScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.tag.Equals("Player"))
-            return;
-        
-        if (!playerInfo.checkItemsBought(productName)){
-            if (playerInfo.getSocialCredit() > price) {
-                playerInfo.spendSocialCredit(price);
-                playerInfo.addItem(productName);
-                equipItem(productName);
-                setEquipMode();
-            }
-        } else equipItem(productName);
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            if (!playerInfo.checkItemsBought(productName)){
+                if (playerInfo.getSocialCredit() > price) {
+                    playerInfo.spendSocialCredit(price);
+                    playerInfo.addItem(productName);
+                    equipItem(productName);
+                    setEquipMode();
+                }
+            } else equipItem(productName);
+        }
     }
 
     // Update is called once per frame
@@ -43,12 +44,14 @@ public class ShopScript : MonoBehaviour
         
     }
 
-    //Disables all the hats except the one indicated
+    //Destorys the current cosmetic and places the new one
     void equipItem(String product){
-        for (int i = 0; i < player.transform.childCount; i++)
+        if (player.transform.GetChild(0).childCount > 0)
         {
-            player.transform.GetChild(i).gameObject.SetActive(player.transform.GetChild(i).gameObject.name.Equals(product) || player.transform.GetChild(i).gameObject.name.Equals("Main Camera"));
+            Destroy(player.transform.GetChild(0).GetChild(0).gameObject);
         }
+
+        Instantiate(cosmetic, player.transform.GetChild(0));
     }
 
     private void setEquipMode()
