@@ -41,6 +41,11 @@ public class PlayerHealthScript : MonoBehaviour
         }
     }
 
+    public int getCurrentHealth()
+    {
+        return currentHealth;
+    }
+
     public void KillPlayer()
     {
         SceneManager.LoadScene("Main Hub");
