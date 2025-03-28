@@ -13,6 +13,8 @@ public class PlayerInfo : ScriptableObject
 
     [NonSerialized]
     public String[] itemsPurchased = new string[0];
+
+    [NonSerialized] private GameObject currentHat;
     
     public void increaseSocialCredit(int amount){
         socialCredit += amount;
@@ -62,5 +64,15 @@ public class PlayerInfo : ScriptableObject
                 itemsPurchased[itemsPurchased.Length - 1] = purchase;
             }
         }
+    }
+
+    public void SetHat(GameObject hat)
+    {
+        currentHat = hat;
+    }
+
+    public GameObject GetHat()
+    {
+        return currentHat;
     }
 }

@@ -20,7 +20,6 @@ public class PlayerInteractScript : MonoBehaviour
             Physics.Raycast(camera.transform.position + (camera.transform.forward * 0.5f), camera.transform.forward, out hit, 20f, mask);
             if (hit.transform)
             {
-                Debug.Log(hit.transform.gameObject.name);
                 if (hit.transform.gameObject.GetComponent<LevelStartScript>())
                 {
                     hit.transform.gameObject.GetComponent<LevelStartScript>().OnInteract(playerInfo.getLevel());
