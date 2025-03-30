@@ -397,6 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: 
   levelRequirement: 0
+  playerInfo: {fileID: 11400000, guid: 15a85f39ebfb729468424b7afa1370ed, type: 2}
 --- !u!65 &4740493437221650660
 BoxCollider:
   m_ObjectHideFlags: 0
