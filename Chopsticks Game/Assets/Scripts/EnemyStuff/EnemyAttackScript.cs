@@ -5,13 +5,12 @@ public class EnemyAttackScript : MonoBehaviour
 {
     [Tooltip("The amount of damage to deal to the player on contact")]
     public int contactDamage;
-
-    [Tooltip("The force of knockback to push the player back with on contact")]
-    public float contactKnockback;
     
     public bool ranged = false;
 
+    [Tooltip("The amount of time between ranged attacks. Is ignored if ranged is false")]
     public float cooldown;
+    [Tooltip("Object to use as a projectile. Is ignored if ranged is false")]
     public GameObject projectile;
 
     private float _lastAttackTime;

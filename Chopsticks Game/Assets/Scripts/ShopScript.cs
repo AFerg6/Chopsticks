@@ -51,6 +51,7 @@ public class ShopScript : MonoBehaviour
             Destroy(player.transform.GetChild(0).GetChild(0).gameObject);
         }
 
+        playerInfo.SetHat(cosmetic);
         Instantiate(cosmetic, player.transform.GetChild(0));
     }
 

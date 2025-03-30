@@ -132,9 +132,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5985350656743624506, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: levelName
+      value: Level-2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5985350656743624506, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: levelRequirement
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 718316534320396184, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983537264573952381, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7425247509395386347, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -179,6 +191,12 @@ PrefabInstance:
     - target: {fileID: 7800260841893131601, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_Name
       value: framedgong5 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605827669068975330, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: m_text
+      value: 'Level 2: Industrial District
+
+        Click on the gong to begin'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -798,6 +816,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5985350656743624506, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: levelName
+      value: Level-1
+      objectReference: {fileID: 0}
     - target: {fileID: 718316534320396184, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -845,6 +867,12 @@ PrefabInstance:
     - target: {fileID: 7800260841893131601, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_Name
       value: framedgong5 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605827669068975330, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: m_text
+      value: 'Level 1: The Fields
+
+        Click on the gong to begin'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -970,6 +998,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5985350656743624506, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: levelName
+      value: Level-3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5985350656743624506, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: levelRequirement
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 718316534320396184, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1017,6 +1053,12 @@ PrefabInstance:
     - target: {fileID: 7800260841893131601, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_Name
       value: framedgong5 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605827669068975330, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: m_text
+      value: 'Level 3: Forbidden City
+
+        Click on the gong to begin'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1219,6 +1261,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5985350656743624506, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: levelName
+      value: Level-5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5985350656743624506, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: levelRequirement
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 718316534320396184, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2594,6 +2644,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5985350656743624506, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: levelName
+      value: Main Hub
+      objectReference: {fileID: 0}
+    - target: {fileID: -5985350656743624506, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: levelRequirement
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 718316534320396184, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2641,6 +2699,12 @@ PrefabInstance:
     - target: {fileID: 7800260841893131601, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_Name
       value: framedgong5 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605827669068975330, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: m_text
+      value: 'Reset The Hub
+
+        Click on the gong to begin'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3215,6 +3279,10 @@ PrefabInstance:
     - target: {fileID: 205534499526416952, guid: 80c9bfe7594f36647b8dfc3142bdf50c, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444133184018283080, guid: 80c9bfe7594f36647b8dfc3142bdf50c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4365,6 +4433,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5985350656743624506, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: levelName
+      value: Level-4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5985350656743624506, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: levelRequirement
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 718316534320396184, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4412,6 +4488,12 @@ PrefabInstance:
     - target: {fileID: 7800260841893131601, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
       propertyPath: m_Name
       value: framedgong5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605827669068975330, guid: dfa39111af2c09c4a9ad431c6925a1c3, type: 3}
+      propertyPath: m_text
+      value: 'Level 4: Cluttered House
+
+        Click on the gong to begin'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

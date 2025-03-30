@@ -41,7 +41,7 @@ public class HealthUiScript : MonoBehaviour
 
     private void generateHealthIcon(int pos)
     {
-        Vector3 healthPosition = transform.position + new Vector3(100*pos, 0f, 0f);
+        Vector3 healthPosition = transform.position + new Vector3((Screen.width/10f)*pos, 0f, 0f);
         Quaternion healthRotation = transform.rotation;
         GameObject healthIcon = Instantiate(healthBarPrefab, healthPosition, healthRotation, transform);
             
