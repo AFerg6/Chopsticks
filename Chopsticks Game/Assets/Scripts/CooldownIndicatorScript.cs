@@ -7,8 +7,8 @@ public class CooldownIndicatorScript : MonoBehaviour
     public string text;
     public Cooldown cooldown;
     private Image indicator;
-    private double maxValue;
-    private double currentValue;
+    private double maxValue = 1;
+    private double currentValue = 0;
     
     //Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,17 +17,16 @@ public class CooldownIndicatorScript : MonoBehaviour
         indicator = gameObject.GetComponent<Image>();
         if(cooldown)
             maxValue = cooldown.GetMaxValue();
-        else
-        {
-            maxValue = 1;
-            currentValue = 0;
-        }
+        
+        indicator.fillAmount = (float)(currentValue / maxValue);
     }
 
     void Update()
     {
-        //Uncomment during phase 2
-        //currentValue = cooldown.GetCurrentValue();
-        indicator.fillAmount = (float)(currentValue / maxValue);
+        if (cooldown)
+        {
+            currentValue = cooldown.GetCurrentValue();
+            indicator.fillAmount = (float)(currentValue / maxValue);
+        }
     }
 }

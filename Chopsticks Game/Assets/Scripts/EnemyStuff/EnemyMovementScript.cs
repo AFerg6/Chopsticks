@@ -35,26 +35,23 @@ public class EnemyMovementScript : MonoBehaviour
         // detect any players in range
         if (Physics.Raycast(transform.position, target.transform.position - transform.position, out _hit, sightRange))
         {
-            if (!_hit.collider.gameObject.CompareTag("Player"))
+            //Do not move if frozen
+            if (!_hit.collider.gameObject.CompareTag("Player") || freezeDuration > 0)
             {
                 _seePlayer = false;
-                rb.linearVelocity = Vector3.zero;
+                rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
             }
             else
             {
                 _seePlayer = true;
-                //Do not move if frozen
-                if (freezeDuration <= 0)
-                {
-                    var heading = target.transform.position - transform.position;
-                    var distance = heading.magnitude;
-                    var direction = heading / distance;
-                
-                    //move to the player
-                    Vector3 move = new Vector3(direction.x * _speed, 0, direction.z * _speed);
-                    rb.linearVelocity = move;
-                    transform.forward = move;
-                }
+                var heading = target.transform.position - transform.position;
+                var distance = heading.magnitude;
+                var direction = heading / distance;
+            
+                //move to the player
+                Vector3 move = new Vector3(direction.x * _speed, rb.linearVelocity.y, direction.z * _speed);
+                rb.linearVelocity = move;
+                transform.forward = move;
             }
         }
         
