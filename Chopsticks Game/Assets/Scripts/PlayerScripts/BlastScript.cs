@@ -40,7 +40,7 @@ public class BlastScript : Cooldown
                 {
                     c.attachedRigidbody.AddExplosionForce(blastForce, hit.transform.position, blastRadius, 3);
                     if(c.gameObject.GetComponent<EnemyMovementScript>())
-                        c.gameObject.GetComponent<EnemyMovementScript>().freeze(1);
+                        c.gameObject.GetComponent<EnemyMovementScript>().freeze(0.5f);
                 }
             }
         }
