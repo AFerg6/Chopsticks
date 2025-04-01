@@ -23,6 +23,6 @@ public class FrontDoorScript : MonoBehaviour, IUnlockable
         locked -= amount;
         updateText();
         if (locked <= 0)
-            gameObject.GetComponent<LevelStartScript>().enabled = true;
+            gameObject.layer = LayerMask.NameToLayer("Interact");
     }
 }

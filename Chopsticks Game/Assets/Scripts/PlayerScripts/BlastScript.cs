@@ -36,12 +36,15 @@ public class BlastScript : Cooldown
             Collider[] colliders = Physics.OverlapSphere(hit.transform.position, blastRadius);
             foreach (Collider c in colliders)
             {
-                if (c.attachedRigidbody)
-                {
-                    c.attachedRigidbody.AddExplosionForce(blastForce, hit.transform.position, blastRadius, 3);
-                    if(c.gameObject.GetComponent<EnemyMovementScript>())
-                        c.gameObject.GetComponent<EnemyMovementScript>().freeze(0.5f);
-                }
+                Rigidbody rb = c.attachedRigidbody;
+                EnemyMovementScript ems = c.gameObject.GetComponent<EnemyMovementScript>();
+                IBlastable blastable = c.gameObject.GetComponent<IBlastable>();
+                if(rb)
+                    rb.AddExplosionForce(blastForce, hit.transform.position, blastRadius, 3);
+                if(ems)
+                    ems.freeze(0.5f);
+                if(blastable != null)
+                    blastable.Blast();
             }
         }
     }
