@@ -1,9 +1,9 @@
 using TMPro;
 using UnityEngine;
 
-public class FrontDoorScript : MonoBehaviour, IUnlockable
+public class HouseDoorScript : MonoBehaviour, IUnlockable
 {
-    private int locked = 2;
+    public int locked = 2;
     private TMP_Text doorText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
