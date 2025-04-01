@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class BlastScript : Cooldown
 {
-    public double maxCooldown = 5;
-    public float blastForce = 3;
-    public float blastRadius = 3;
+    public double maxCooldown = 2;
+    public float blastForce = 400;
+    public float blastRadius = 6;
 
     private double currentCooldown = 0;
 
@@ -33,14 +33,14 @@ public class BlastScript : Cooldown
 
         if(hit.transform)
         {
-            Collider[] colliders = Physics.OverlapSphere(hit.transform.position, blastRadius);
+            Collider[] colliders = Physics.OverlapSphere(hit.point, blastRadius);
             foreach (Collider c in colliders)
             {
                 Rigidbody rb = c.attachedRigidbody;
                 EnemyMovementScript ems = c.gameObject.GetComponent<EnemyMovementScript>();
                 IBlastable blastable = c.gameObject.GetComponent<IBlastable>();
                 if(rb)
-                    rb.AddExplosionForce(blastForce, hit.transform.position, blastRadius, 3);
+                    rb.AddExplosionForce(blastForce, hit.point, blastRadius, 3);
                 if(ems)
                     ems.freeze(0.5f);
                 if(blastable != null)
