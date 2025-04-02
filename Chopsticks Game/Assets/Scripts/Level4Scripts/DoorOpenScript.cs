@@ -19,6 +19,6 @@ public class DoorOpenScript : MonoBehaviour, IInteractable
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag.Equals("Player") && open)
-            other.transform.Translate(transform.forward*3f);
+            other.transform.position = transform.position + (transform.forward*3f);
     }
 }
