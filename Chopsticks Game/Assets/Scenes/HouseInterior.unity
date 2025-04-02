@@ -564,6 +564,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 495079333}
     m_Modifications:
+    - target: {fileID: 198798728387616727, guid: 62c2f839d3c51164c9e0204fd5d1ef35, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3781493844561589586, guid: 62c2f839d3c51164c9e0204fd5d1ef35, type: 3}
       propertyPath: m_Name
       value: Ghost (1)
@@ -934,6 +938,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 495079333}
     m_Modifications:
+    - target: {fileID: 198798728387616727, guid: 62c2f839d3c51164c9e0204fd5d1ef35, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3781493844561589586, guid: 62c2f839d3c51164c9e0204fd5d1ef35, type: 3}
       propertyPath: m_Name
       value: Ghost
@@ -4893,6 +4901,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 495079333}
     m_Modifications:
+    - target: {fileID: 198798728387616727, guid: 62c2f839d3c51164c9e0204fd5d1ef35, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3781493844561589586, guid: 62c2f839d3c51164c9e0204fd5d1ef35, type: 3}
       propertyPath: m_Name
       value: Ghost (2)
@@ -6855,6 +6867,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 495079333}
     m_Modifications:
+    - target: {fileID: 198798728387616727, guid: 62c2f839d3c51164c9e0204fd5d1ef35, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3781493844561589586, guid: 62c2f839d3c51164c9e0204fd5d1ef35, type: 3}
       propertyPath: m_Name
       value: Ghost (3)
