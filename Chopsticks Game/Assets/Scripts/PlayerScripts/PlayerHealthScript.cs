@@ -40,6 +40,20 @@ public class PlayerHealthScript : MonoBehaviour
                 KillPlayer();
         }
     }
+    
+    public void HealPlayer(int healed)
+    {
+        if (currentHealth + healed >= maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            currentHealth += healed;
+        }
+            
+        
+    }
 
     public int getCurrentHealth()
     {
