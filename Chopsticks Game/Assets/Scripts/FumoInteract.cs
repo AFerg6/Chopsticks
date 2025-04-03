@@ -11,7 +11,7 @@ public class FumoPetScript : MonoBehaviour
     public bool hasFumo = false;
     public GameObject fumoPrefab;
     public int triggerCount = 0;
-    private float interactNumCooldown = 3f;
+    public float interactNumCooldown = 3f;
     private AudioSource audioData;
 
     private void Start()
@@ -47,26 +47,28 @@ public class FumoPetScript : MonoBehaviour
         if (triggerActive && Input.GetMouseButtonDown(0))
         {
             triggerCount++;
+            interactNumCooldown = 3f;
             
             if (triggerCount == 9)
             {
+                triggerCount = 0;
                 audioData.Play(0);
             }
             
-            if(!hasFumo && triggerCount ==1)
+            if( triggerCount ==1)
             {
-                // toggleFumo();
+                toggleFumo();
             }
 
             
             
-            if(triggerCount > 0)
-            {
-                interactNumCooldown -= Time.deltaTime;
-            }
+            
         }
 
-        
+        if(triggerCount > 0)
+        {
+            interactNumCooldown -= Time.deltaTime;
+        }
         
         if (interactNumCooldown <= 0.0f)
         {
@@ -75,24 +77,26 @@ public class FumoPetScript : MonoBehaviour
         }
     }
     
-    // private void toggleFumo()
-    // {
-    //
-    //     GameObject fumoObj = player.gameObject.GetComponent();
-    //     
-    //     
-    //     //if player doesnt have the fumo pet attached to them adds the fumo prefab as a child to the player
-    //     if ( fumoObj == null)
-    //     {
-    //         GameObject fumo = Instantiate(fumoPrefab, player.transform);
-    //         fumo.name = "fumo(pet)";
-    //         hasFumo = true;
-    //     }
-    //     else
-    //     {
-    //         fumoObj.IsDestroyed();
-    //     }
-    // }
+    private void toggleFumo()
+    {
+
+        GameObject fumoObj = GameObject.Find("fumo(pet)");
+        
+        // Debug.Log(fumoObj);
+        
+        
+        //if player doesnt have the fumo pet attached to them adds the fumo prefab as a child to the player
+        if ( fumoObj == null)
+        {
+            GameObject fumo = Instantiate(fumoPrefab, player.transform);
+            fumo.name = "fumo(pet)";
+            hasFumo = true;
+        }
+        else
+        {
+            Destroy(fumoObj);
+        }
+    }
     
     
 }
