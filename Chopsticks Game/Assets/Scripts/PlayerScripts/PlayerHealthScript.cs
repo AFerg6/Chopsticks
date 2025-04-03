@@ -40,6 +40,20 @@ public class PlayerHealthScript : MonoBehaviour
                 KillPlayer();
         }
     }
+    
+    public void HealPlayer(int healed)
+    {
+        if (currentHealth + healed >= maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            currentHealth += healed;
+        }
+            
+        
+    }
 
     public int getCurrentHealth()
     {
@@ -49,5 +63,17 @@ public class PlayerHealthScript : MonoBehaviour
     public void KillPlayer()
     {
         SceneManager.LoadScene("Main Hub");
+    }
+
+    public bool isFullHealth()
+    {
+        if (currentHealth == maxHealth)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
