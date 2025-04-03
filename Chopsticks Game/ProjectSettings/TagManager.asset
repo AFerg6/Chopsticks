@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - HealthUI
   - Breakable
+  - TomatoPlant
+  - FarmField
+
   layers:
   - Default
   - TransparentFX
