@@ -19,7 +19,7 @@ public class HealScript : Cooldown
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(healKey) && Time.time >=_nextActionTime)
+        if (Input.GetKeyUp(healKey) && !_playerHealthScript.isFullHealth() && Time.time >=_nextActionTime)
         {
             RestorePlayer();
             _nextActionTime = Time.time + cooldownTime;
@@ -39,6 +39,6 @@ public class HealScript : Cooldown
 
     public override double GetCurrentValue()
     {
-        return  (_nextActionTime - Time.deltaTime);
+        return cooldownTime -(_nextActionTime - Time.time);
     }
 }

@@ -64,4 +64,16 @@ public class PlayerHealthScript : MonoBehaviour
     {
         SceneManager.LoadScene("Main Hub");
     }
+
+    public bool isFullHealth()
+    {
+        if (currentHealth == maxHealth)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

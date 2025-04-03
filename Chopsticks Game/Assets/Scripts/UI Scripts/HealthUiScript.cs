@@ -46,7 +46,7 @@ public class HealthUiScript : MonoBehaviour
         healthBar[pos] = healthIcon;
     }
 
-    void checkHealth()
+    public void checkHealth()
     {
         
 
