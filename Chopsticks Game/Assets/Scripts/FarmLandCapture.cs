@@ -1,28 +1,30 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 using TMPro;
+using System.Collections;
 
 public class FarmLandCapture : MonoBehaviour
 {
-    public float timeRequired = 1f; 
+    public float timeRequired = 5f;
     private float timeInside = 0f;
     private bool playerInside = false;
     private bool isCompleted = false;
 
-    public int scoreIncrement = 1;
-    private int score = 0;
-    
-    public TextMeshProUGUI messagePanel;
-    public TextMeshProUGUI keyPanel;
+    public static int totalScore = 0;
+
+    public GameObject messagePanel;
+    public GameObject keyPanel;
     public GameObject key;
 
     private void Start()
     {
         if (messagePanel != null)
         {
-            messagePanel.SetText("");
-            keyPanel.SetText("");
+            messagePanel.SetActive(false);
+            if (keyPanel != null) keyPanel.SetActive(false);
+        }
+
+        if (key != null)
+        {
             key.SetActive(false);
         }
     }
@@ -31,6 +33,7 @@ public class FarmLandCapture : MonoBehaviour
     {
         if (other.CompareTag("Player") && !isCompleted)
         {
+            Debug.Log("Player entered");
             playerInside = true;
             timeInside = 0f;
         }
@@ -53,36 +56,45 @@ public class FarmLandCapture : MonoBehaviour
 
             if (timeInside >= timeRequired)
             {
-                UpdateScore();
+                CaptureFarm();
                 isCompleted = true;
             }
         }
     }
 
-    private void UpdateScore()
+    private void CaptureFarm()
     {
-        score += scoreIncrement;
+        totalScore += 1;
 
-        messagePanel.SetText("Captured");
-        StartCoroutine(HideMessageAfterDelay(3f));
+        if (messagePanel != null)
+        {
+            messagePanel.SetActive(true);
+            StartCoroutine(HideMessageAfterDelay(3f));
+        }
+
+        if (totalScore == 3 && keyPanel != null && key != null)
+        {
+            keyPanel.SetActive(true);
+            key.SetActive(true);
+            StartCoroutine(HideKeyMessageAfterDelay(3f));
+        }
     }
 
     private IEnumerator HideMessageAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        messagePanel.SetText("");
-        if (score == 1 && messagePanel != null)
+        if (messagePanel != null)
         {
-            Debug.Log("Penis");
-            keyPanel.SetText("Key Unlocked");
-            key.SetActive(true);
-            StartCoroutine(HideKeyMessageAfterDelay(3f)); 
+            messagePanel.SetActive(false);
         }
     }
-    
+
     private IEnumerator HideKeyMessageAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        keyPanel.SetText("");
+        if (keyPanel != null)
+        {
+            keyPanel.SetActive(false);
+        }
     }
 }
