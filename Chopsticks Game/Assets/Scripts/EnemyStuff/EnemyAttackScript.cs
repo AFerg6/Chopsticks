@@ -37,14 +37,21 @@ public class EnemyAttackScript : MonoBehaviour
 
     private void AttackPlayer()
     {
-        Vector3 look = _player.transform.position;
-        look.y = transform.position.y;
-        transform.LookAt(look);
-        
-        Rigidbody rb = Instantiate(projectile, transform.position, transform.rotation).GetComponent<Rigidbody>();
+        // Vector3 look = _player.transform.position;
+        // look.y = transform.position.y;
+        // transform.LookAt(look);
+        //
+        // Rigidbody rb = Instantiate(projectile, transform.position, transform.rotation).GetComponent<Rigidbody>();
+        //
+        // rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+        // rb.AddForce(transform.up * 32f, ForceMode.Impulse);
 
-        rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-        rb.AddForce(transform.up * 32f, ForceMode.Impulse);
+        GameObject thrownItem = Instantiate(projectile, transform.position, transform.rotation);
+        
+        // thrownItem.transform.SetParent(transform);
+        // thrownItem.transform.localPosition = Vector3.zero;
+        // Debug.Log("thrown spear!");
+        // Debug.Break();
     }
 
     private void OnCollisionStay(Collision other)
