@@ -9,7 +9,6 @@ TagManager:
   - Breakable
   - TomatoPlant
   - FarmField
-
   layers:
   - Default
   - TransparentFX

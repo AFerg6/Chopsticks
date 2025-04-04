@@ -2861,6 +2861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961e4a95ede36354a8c290fb56ec6d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  freezeDuration: 15
+  abilityCooldown: 20
 --- !u!114 &519336650
 MonoBehaviour:
   m_ObjectHideFlags: 0
