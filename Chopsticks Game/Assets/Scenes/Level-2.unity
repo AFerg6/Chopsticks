@@ -2231,6 +2231,22 @@ MonoBehaviour:
   sprintSpeed: 10
   maxStamina: 7
   recoverySpeed: 0.8
+--- !u!114 &1022980545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022980533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22738347b463c9c40be16b236d7f1a91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 5
+  force: 200
+  range: 5
+  player: {fileID: 11400000, guid: 15a85f39ebfb729468424b7afa1370ed, type: 2}
 --- !u!1 &1059092815
 GameObject:
   m_ObjectHideFlags: 0
@@ -3583,6 +3599,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4307466343656268288, guid: 2aeb0ef716f97984785187a47f694f5c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1022980544}
+    - targetCorrespondingSourceObject: {fileID: 4307466343656268288, guid: 2aeb0ef716f97984785187a47f694f5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1022980545}
   m_SourcePrefab: {fileID: 100100000, guid: 2aeb0ef716f97984785187a47f694f5c, type: 3}
 --- !u!1001 &1786284581
 PrefabInstance:
@@ -3745,8 +3764,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7080801176910881373, guid: f69b046b6d0be62448e447e4d5d265d1, type: 3}
+      propertyPath: cooldown
+      value: 
+      objectReference: {fileID: 1022980545}
     m_RemovedComponents:
     - {fileID: 8831554502335818091, guid: f69b046b6d0be62448e447e4d5d265d1, type: 3}
+    - {fileID: 4569202376718039599, guid: f69b046b6d0be62448e447e4d5d265d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

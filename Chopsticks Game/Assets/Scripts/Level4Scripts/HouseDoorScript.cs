@@ -14,7 +14,7 @@ public class HouseDoorScript : MonoBehaviour, IUnlockable
 
     private void updateText()
     {
-        doorText.text = "Locks: " + locked;
+        doorText.text = "Locks: " + locked + (locked <= 0 ? "\nClick!" : "");
     }
 
     //Activates the level change when the door is unlocked

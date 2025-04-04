@@ -2511,6 +2511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4569202376718039599, guid: f69b046b6d0be62448e447e4d5d265d1, type: 3}
+      propertyPath: sprintScript
+      value: 
+      objectReference: {fileID: 519336648}
     - target: {fileID: 4818501964358243830, guid: f69b046b6d0be62448e447e4d5d265d1, type: 3}
       propertyPath: cooldown
       value: 
@@ -2849,6 +2853,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5d3fb13f12cb74780ed35c5481f4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprintSpeed: 10
+  maxStamina: 5
+  recoverySpeed: 0.5
 --- !u!114 &519336649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2861,8 +2868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961e4a95ede36354a8c290fb56ec6d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeDuration: 15
-  abilityCooldown: 20
+  freezeDuration: 5
+  abilityCooldown: 30
 --- !u!114 &519336650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2875,6 +2882,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22738347b463c9c40be16b236d7f1a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 6
+  force: 200
+  range: 4
+  player: {fileID: 11400000, guid: 15a85f39ebfb729468424b7afa1370ed, type: 2}
 --- !u!1001 &522302830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3343,7 +3354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5226373586930314313, guid: 2aeb0ef716f97984785187a47f694f5c, type: 3}
       propertyPath: maxHealth
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8358594774416390577, guid: 2aeb0ef716f97984785187a47f694f5c, type: 3}
       propertyPath: m_LocalPosition.x
