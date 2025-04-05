@@ -15,6 +15,7 @@ public class PlayerMovementScript : MonoBehaviour
     
     private float xRotation = 0f; // Tracks vertical rotation (pitch)
     private float remainingCoyoteTime;
+    private float jumpLockout; //For preventing double jumping by mashing jump
     private bool grounded;
     private bool wasGrounded;
     private Transform playerCam;
@@ -44,7 +45,7 @@ public class PlayerMovementScript : MonoBehaviour
         animator.SetBool("Grounded", grounded);
         
         if(Input.GetButtonDown("Jump"))
-            if(grounded || remainingCoyoteTime > 0)
+            if((grounded || remainingCoyoteTime > 0) && jumpLockout <= 0)
                 jump();
         
         rotatePlayerCam();
@@ -52,6 +53,10 @@ public class PlayerMovementScript : MonoBehaviour
         //Time to count as grounded after leaving the ground
         if (remainingCoyoteTime > 0)
             remainingCoyoteTime -= Time.deltaTime;
+        
+        //Decrements jump lockout
+        if (jumpLockout > 0)
+            jumpLockout -= Time.deltaTime;
 
         if (wasGrounded && !grounded)
             remainingCoyoteTime = coyoteTime;
@@ -76,6 +81,7 @@ public class PlayerMovementScript : MonoBehaviour
         rb.AddForce(0, jumpForce, 0, ForceMode.VelocityChange);
         grounded = false;
         wasGrounded = false;
+        jumpLockout = 0.4f;
     }
 
     private bool checkGrounded()

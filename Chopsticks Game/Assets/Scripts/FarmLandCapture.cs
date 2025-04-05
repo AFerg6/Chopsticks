@@ -33,7 +33,6 @@ public class FarmLandCapture : MonoBehaviour
     {
         if (other.CompareTag("Player") && !isCompleted)
         {
-            Debug.Log("Player entered");
             playerInside = true;
             timeInside = 0f;
         }
