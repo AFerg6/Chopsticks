@@ -2120,8 +2120,8 @@ PrefabInstance:
     - target: {fileID: -7903130462467474539, guid: 8cf9ffc8e0032c543bb2fefb97a8dc13, type: 3}
       propertyPath: storyText
       value: Your journey takes you into a middle-class neighbourhood. You hear cries
-        of terror coming from a nearby house. Click on the man to speak to him about
-        what's going on...
+        of terror coming from a nearby house. Right click to blast things in the
+        environment. Click on the man to speak to him about what's going on...
       objectReference: {fileID: 0}
     - target: {fileID: 1319019501138540756, guid: 8cf9ffc8e0032c543bb2fefb97a8dc13, type: 3}
       propertyPath: m_Pivot.x

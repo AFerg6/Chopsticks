@@ -25379,10 +25379,10 @@ PrefabInstance:
       objectReference: {fileID: 393470697}
     - target: {fileID: -7903130462467474539, guid: 8cf9ffc8e0032c543bb2fefb97a8dc13, type: 3}
       propertyPath: storyText
-      value: Bob has now become a guard in the Forbidden City his sleepless nights
-        have caused him to hallucinate ghosts find the hidden key and escape from
-        this haunted town. Use the newly unlocked freeze ability to escape if you
-        are surrounded
+      value: Bob has now become a guard in the Forbidden City. His sleepless nights
+        have caused him to hallucinate ghosts! Find the hidden key and escape from
+        this haunted town. Use the newly unlocked freeze ability (F) to escape if
+        you are surrounded
       objectReference: {fileID: 0}
     - target: {fileID: 1319019501138540756, guid: 8cf9ffc8e0032c543bb2fefb97a8dc13, type: 3}
       propertyPath: m_Pivot.x

@@ -16,6 +16,9 @@ public class LevelInfoScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Levels must be completed in order.\nNext level: " + Math.Min(playerInfo.getLevel() + 1, 5);
+        if (playerInfo.getLevel() >= 5)
+            text.text = "Congratulations! you have completed all the levels!\nYou are truly at the top of the social ladder";
+        else
+            text.text = "Levels must be completed in order.\nNext level: " + (playerInfo.getLevel() + 1);
     }
 }
