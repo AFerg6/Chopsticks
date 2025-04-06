@@ -5,13 +5,12 @@ public class EnemyAttackScript : MonoBehaviour
 {
     [Tooltip("The amount of damage to deal to the player on contact")]
     public int contactDamage;
-
-    [Tooltip("The force of knockback to push the player back with on contact")]
-    public float contactKnockback;
     
     public bool ranged = false;
 
+    [Tooltip("The amount of time between ranged attacks. Is ignored if ranged is false")]
     public float cooldown;
+    [Tooltip("Object to use as a projectile. Is ignored if ranged is false")]
     public GameObject projectile;
 
     private float _lastAttackTime;
@@ -38,14 +37,21 @@ public class EnemyAttackScript : MonoBehaviour
 
     private void AttackPlayer()
     {
-        Vector3 look = _player.transform.position;
-        look.y = transform.position.y;
-        transform.LookAt(look);
-        
-        Rigidbody rb = Instantiate(projectile, transform.position, transform.rotation).GetComponent<Rigidbody>();
+        // Vector3 look = _player.transform.position;
+        // look.y = transform.position.y;
+        // transform.LookAt(look);
+        //
+        // Rigidbody rb = Instantiate(projectile, transform.position, transform.rotation).GetComponent<Rigidbody>();
+        //
+        // rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+        // rb.AddForce(transform.up * 32f, ForceMode.Impulse);
 
-        rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-        rb.AddForce(transform.up * 32f, ForceMode.Impulse);
+        GameObject thrownItem = Instantiate(projectile, transform.position, transform.rotation);
+        
+        // thrownItem.transform.SetParent(transform);
+        // thrownItem.transform.localPosition = Vector3.zero;
+        // Debug.Log("thrown spear!");
+        // Debug.Break();
     }
 
     private void OnCollisionStay(Collision other)

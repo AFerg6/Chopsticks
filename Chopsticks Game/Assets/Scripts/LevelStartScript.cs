@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelStartScript : MonoBehaviour
+public class LevelStartScript : MonoBehaviour, IInteractable
 {
     public string levelName;
     public int levelRequirement;
-    public void OnInteract(int level)
+    public PlayerInfo playerInfo;
+    public void Interact()
     {
-        if(level >= levelRequirement)
+        if(playerInfo.getLevel() >= levelRequirement)
             SceneManager.LoadScene(levelName);
     }
 }
