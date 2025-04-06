@@ -27,10 +27,8 @@ public class FreezeScript : Cooldown
         // Check if the F key is pressed and if the ability is off cooldown
         if (Input.GetKeyDown(KeyCode.F) && cooldownTimer <= 0)
         {
-            cooldownTimer = 60;
+            cooldownTimer = abilityCooldown;
             ActivateFreeze();
-            Debug.Log("Hitting F");
-            
         }
     }
 
@@ -53,11 +51,11 @@ public class FreezeScript : Cooldown
     //For cooldown UI: GetMaxValue should be the full charge value and GetCurrentValue should be the current value
     public override double GetMaxValue()
     {
-        return 20f;
+        return abilityCooldown;
     }
 
     public override double GetCurrentValue()
     {
-        return cooldownTimer;
+        return abilityCooldown - cooldownTimer;
     }
 }

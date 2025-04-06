@@ -28,7 +28,6 @@ public class ScytheScript : Cooldown
 
         if (Input.GetKeyDown(KeyCode.E) && _currentCoolDown >= cooldown)
         {
-            Debug.Log("BIGG");
             _currentCoolDown = 0;
             Collider[] colliders = Physics.OverlapSphere(transform.position, range);
             
@@ -47,7 +46,6 @@ public class ScytheScript : Cooldown
                 {
                     Destroy(e.gameObject);
                     _destroyed++;
-                    Debug.Log(_destroyed);
                     if (_destroyed % 3 == 0)
                     {
                         player.increaseSocialCredit(1);
